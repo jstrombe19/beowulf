@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.13)
-include(pico-sdk/external/pico_sdk_import.cmake)
+include(./pico-sdk/external/pico_sdk_import.cmake)
 
 project(pico_fft_bench C CXX ASM)
 pico_sdk_init()
