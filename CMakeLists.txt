@@ -8,10 +8,20 @@ add_executable(fft_bench
     main.c
     fft_q15.c
 )
+
 target_link_libraries(fft_bench pico_stdlib)
 pico_enable_stdio_usb(fft_bench 1)
 pico_enable_stdio_uart(fft_bench 0)
 pico_add_extra_outputs(fft_bench)
+
+add_executable(master_cluster_test
+    master_cluster_test.c
+)
+
+target_link_libraries(master_cluster_test pico_stdlib hardware_spi)
+pico_enable_stdio_usb(master_cluster_test 1)
+pico_enable_stdio_uart(master_cluster_test 0)
+pico_add_extra_outputs(master_cluster_test)
 
 # Optional: change iterations and flags at build time
 # e.g., cmake -DN_ITER=1000 -DDO_HANN=1 -DINCLUDE_WINDOW_IN_TIMING=1 ..
